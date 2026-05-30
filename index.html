@@ -705,9 +705,9 @@ function startLevel() {
     game.enemiesRemaining = TOTAL_ENEMIES_PER_LEVEL + game.level * 2;
     game.spawnTimer = 0;
 
-    // 玩家坦克
-    const px = 6 * CELL + (CELL - TANK_SIZE) / 2;
-    const py = 12 * CELL + (CELL - TANK_SIZE) / 2;
+    // 玩家坦克 - 放在基地左下方的空地 (第4列, 第11行)
+    const px = 4 * CELL + (CELL - TANK_SIZE) / 2;
+    const py = 11 * CELL + (CELL - TANK_SIZE) / 2;
     game.player = createTank(px, py, 'up', true);
 
     if (game.state === 'levelComplete') game.state = 'playing';
@@ -857,8 +857,8 @@ function playerHit() {
         // 重生
         setTimeout(() => {
             if (game.state === 'playing') {
-                const px = 6 * CELL + (CELL - TANK_SIZE) / 2;
-                const py = 12 * CELL + (CELL - TANK_SIZE) / 2;
+                const px = 4 * CELL + (CELL - TANK_SIZE) / 2;
+                const py = 11 * CELL + (CELL - TANK_SIZE) / 2;
                 game.player = createTank(px, py, 'up', true);
                 game.player.spawnFlash = 60;
             }

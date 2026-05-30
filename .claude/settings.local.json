@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell(git *)"
+      "PowerShell(git *)",
+      "PowerShell(gh *)",
+      "PowerShell(Test-NetConnection *)",
+      "PowerShell(ssh-keygen *)",
+      "PowerShell(Get-Content *)"
     ]
   }
 }
